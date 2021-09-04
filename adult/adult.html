@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adult ATM</title>
+    <link rel="stylesheet" href="adult-style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,900;1,400;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="atm">
+        <nav>
+            <button class="calc-btn selected top">
+                <span class="material-icons">trending_up</span>
+            </button>
+            <button class="budget-btn unselected bottom">
+                <span class="material-icons">calculate</span>
+            </button>
+        </nav>
+        <div class="budget-div">
+            <h1>Plan Your Saving</h1>
+            <div class="income-spending-input">
+                <div class="input-btn-group">
+                    <label for="start-balance">How much money do you currently have?</label>
+                    <input type="number" class="balance-input" name="start-balance">
+                </div>
+                <div class="input-btn-group">
+                    <label for="income">How much do you earn? (weekly)</label>
+                    <input type="number" class="income-input" name="income">
+                </div>
+                <div class="input-btn-group">
+                    <label for="spending">How much do you spend? (weekly)</label>
+                    <input type="number" class="spending-input" name="spending">
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="3mo" name="time-frame" value="3">
+                    <label for="3mo">3 Months</label>
+                    <input type="radio" id="6mo" name="time-frame" value="6">
+                    <label for="6mo">6 months</label>
+                    <input type="radio" id="1yr" name="time-frame" value="1">
+                    <label for="1yr">1 year</label>
+                </div>
+                <button class="make-budget-btn">Make budget</button>
+            </div>
+            <div class="budget-chart canvas">
+                <canvas id="budgetChart"></canvas>
+            </div>
+        </div>
+        <div class="calc-div disp-none">
+            <h1>Your Personal Money Manager</h1>
+            <h2>$<span class="balance">0</span></h2>
+            <div class="canvas">
+                <canvas id="myChart"></canvas>
+            </div>
+            <div class="input-btn-group">
+                <input type="number" class="deposit-input">
+                <button class="deposit-btn">deposit</button>
+            </div>
+            <div class="input-btn-group">
+                <input type="number" class="withdraw-input">
+                <button class="withdraw-btn">withdraw</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="./adult-app.js"></script>
+</body>
+</html>
